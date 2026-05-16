@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { FirebaseClientProvider } from '@/firebase';
 import { FirebaseErrorListener } from '@/components/FirebaseErrorListener';
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -43,6 +44,7 @@ export default function RootLayout({
           <FirebaseErrorListener />
           {children}
         </FirebaseClientProvider>
+        <Analytics />
       </body>
     </html>
   );
